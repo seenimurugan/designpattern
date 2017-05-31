@@ -14,9 +14,6 @@ import com.seeni.designpattern.com.seeni.designpattern.stratagy.Quackable;
  */
 public class Main {
     public static void main(String[] args) {
-//        Duck woodenDuck = new WoodenDuck();
-//        Duck realDuck = new RealDuck();
-//        Duck gooseAdapter = new GooseQuackableAdapter(new Goose());
         DuckFactory duckFactory = new DuckFactoryImpl();
         DuckFactory duckCountableFactory = new DuckCountableFactoryImpl();
 
@@ -36,10 +33,9 @@ public class Main {
         countableFolks.registerObserver(quackologist);
 
         Main main = new Main();
+
         main.simulate(folks);
-
         main.simulate(countableFolks);
-
 
         System.out.println("total quacks: " + QuackDecorator.getCount());
     }
